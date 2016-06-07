@@ -1,0 +1,58 @@
+'fileTypes': [
+    'src'
+    'asm'
+]
+'name': '8051 Assembly'
+'scopeName': 'source.8051-assembly'
+
+'patterns': [
+
+            # highlighting important registers
+            # comment it out if you don't prefer this
+            {
+                'match': '\\b(A|C|DPTR|PC|R([0-9]+))\\b'
+                'name': 'string.important.register.8051-assembly'
+            },
+
+            {
+                'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+                'name': 'constant.numeric.real.8051-assembly'
+
+            },
+
+            {
+                'match': '#[0-9a-fA-F_]+[hH]?'
+                'name': 'constant.numeric.hexadecimal.8051-assembly'
+            },
+
+            {
+                'match': '#([01_]+)[bB]'
+                'name': 'constant.numeric.binary.8051-assembly'
+            },
+
+            {
+                'match': '(;.*$)|(//.*$)'
+                'name': 'comment.line.8051-assembly'
+            },
+
+            {
+                'match': '\\b(ADD|ADDC|ANL|CJNE|CLR|CPL|DA|DEC|DIV|DJNZ|INC|JB|JNB|JBC|JC|JNC|JZ|JNZ|MOV|MOVC|MOVX|MUL|NOP|ORL|POP|PUSH|RL|RLC|RR|RRC|SUBB|SWAP|XCH|XRL)\\b'
+                'name': 'keyword.instruction.8051-assembly'
+            },
+
+            {
+                'match': '\\b(ORG|EQU|END|DB)\\b'
+                'name': 'storage.assembler.directive.8051-assembly'
+            },
+
+            {
+                'match': '\\b(ACALL|AJMP|LCALL|LJMP|SJMP|JMP|RET|RETI)\\b'
+                'name': 'support.function.jump-or-call.8051-assembly'
+            },
+
+            {
+                'match': '^[0-9a-zA-Z]+:'
+                'name': 'support.function.label.8051-assembly'
+            }
+
+        ]

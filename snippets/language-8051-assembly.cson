@@ -1,0 +1,245 @@
+'.source.8051-assembly':
+
+# all jump instructions have the prefix "JMP<jump type>"
+# all logical instructions have the prefix "L<logical operation>"
+# all call instructions have the prefix "CALL<call type>"
+
+
+# A
+    'ACALL':
+        'prefix': 'CALLABSOLUTE'
+        'body': 'ACALL ${1:addr}\n$2'
+
+    'ADD A,':
+        'prefix': 'ADD'
+        'body': 'ADD A, ${1:srcbyte}\n$2'
+
+    'ADDC A,':
+        'prefix': 'ADDC'
+        'body': 'ADDC A, ${1:srcbyte}\n$2'
+
+    'AJMP':
+        'prefix': 'JMPABSOLUTE'
+        'body': 'AJMP ${1:addr}\n$2'
+
+    'ANL':
+        'prefix': 'LAND'
+        'body': 'ANL ${1:A}, ${2:srcbyte}\n$3'
+
+    'ANL C':
+        'prefix': 'LANDC'
+        'body': 'ANL C, ${1:bit}\n$2'
+
+# B
+
+# C
+
+    'CJNE':
+        'prefix': 'CJNE'
+        'body': 'CJNE ${1:destbyte}, ${2:srcbyte}, ${3:target}\n$4'
+
+    'CLR A':
+        'prefix': 'CLRA'
+        'body': 'CLR A\n$1'
+
+    'CLR bit':
+        'prefix': 'CLRbit'
+        'body': 'CLR ${1:C}\n$2'
+
+    'CPL A':
+        'prefix': 'CPLA'
+        'body': 'CPL A\n$1'
+
+    'CPL bit':
+        'prefix': 'CPLbit'
+        'body': 'CPL ${1:C}\n$2'
+
+# D
+
+    'DA A':
+        'prefix': 'DA'
+        'body': 'DA A\n$1'
+
+    'DEC byte':
+        'prefix': 'DEC'
+        'body': 'DEC ${1:A}\n$2'
+
+    'DIV AB':
+        'prefix': 'DIV'
+        'body': 'DIV AB\n$1'
+
+    'DJNZ':
+        'prefix': 'DJNZ'
+        'body': 'DJNZ ${1:byte}, ${2:addr}\n$3'
+
+    'File documentation':
+        'prefix': 'doc'
+        'body': """
+        ; ${1:filename}
+        ; ${2:version}
+        ; ${3:date}
+        ; ${4:author}
+        ; ${5:description of file}
+        $6
+        """
+# E
+# F
+# G
+# H
+
+# I
+
+    'INC byte':
+        'prefix': 'INC'
+        'body': 'INC ${1:byte}\n$2'
+
+# J
+
+    'JB bit':
+        'prefix': 'JB'
+        'body': 'JB ${1:bit}, ${2:label}\n$3'
+
+    'JNB bit':
+        'prefix': 'JNB'
+        'body': 'JNB ${1:bit}, ${2:label}\n$3'
+
+    'JBC bit':
+        'prefix': 'JBC'
+        'body': 'JBC ${1:bit}, ${2:label}\n$3'
+
+    'JC label':
+        'prefix': 'JC'
+        'body': 'JC ${1:label}\n$2'
+
+    'JMP @A+DPTR':
+        'prefix': 'JMP@A+DPTR'
+        'body': 'JMP @A+DPTR\n$1'
+
+    'JNC label':
+        'prefix': 'JNC'
+        'body': 'JNC ${1:label}\n$2'
+
+    'JZ label':
+        'prefix': 'JZ'
+        'body': 'JZ ${1:label}\n$2'
+
+    'JNZ label':
+        'prefix': 'JNZ'
+        'body': 'JNZ ${1:label}\n$2'
+
+# K
+
+# L
+
+    'LCALL':
+        'prefix': 'CALLLONG'
+        'body': 'LCALL ${1:addr}\n$2'
+
+    'LJMP':
+        'prefix': 'JMPLONG'
+        'body': 'LJMP ${1:addr}\n$2'
+
+# M
+
+    'MOV':
+        'prefix': 'MOV'
+        'body': 'MOV ${1:dest}, ${2:source}\n$3'
+
+    'MOVC':
+        'prefix': 'MOVC'
+        'body': 'MOVC A, @A+${1:DPTR}\n$2'
+
+    'MOVX':
+        'prefix': 'MOVX'
+        'body': 'MOVX ${1:dest}, ${2:source}\n$3'
+
+    'MUL AB':
+        'prefix': 'MUL'
+        'body': 'MUL AB\n$1'
+
+# N
+
+    'NO OPERATION':
+        'prefix': 'NOP'
+        'body': 'NOP\n$1'
+
+# O
+
+    'ORL':
+        'prefix': 'LOR'
+        'body': 'ORL ${1:A}, ${2:srcbyte}\n$3'
+
+    'ORL C':
+        'prefix': 'LORC'
+        'body': 'ORL C, ${1:bit}\n$2'
+
+# P
+
+    'POP STACK':
+        'prefix': 'POP'
+        'body': 'POP ${1:direct}\n$2'
+
+    'PUSH STACK':
+        'prefix': 'PUSH'
+        'body': 'PUSH ${1:direct}\n$2'
+
+# Q
+
+# R
+
+    'RET SUBROUTINE':
+        'prefix': 'RET'
+        'body': 'RET\n$1'
+
+    'RET INTERRUPT':
+        'prefix': 'RETI'
+        'body': 'RETI\n$1'
+
+    'ROTATE LEFT':
+        'prefix': 'RL'
+        'body': 'RL A\n$1'
+
+    'ROTATE LEFT CARRY':
+        'prefix': 'RLC'
+        'body': 'RLC A\n$1'
+
+    'ROTATE RIGHT':
+        'prefix': 'RR'
+        'body': 'RR A\n$1'
+
+    'ROTATE RIGHT CARRY':
+        'prefix': 'RRC'
+        'body': 'RRC A\n$1'
+
+# S
+
+    'SJMP':
+        'prefix': 'JMPSHORT'
+        'body': 'SJMP ${1:addr}\n$2'
+
+    'SUB BORROW A,':
+        'prefix': 'SUBB'
+        'body': 'SUBB A, ${1:srcbyte}\n$2'
+
+    'SWAP A':
+        'prefix': 'SWAP'
+        'body': 'SWAP A\n$1'
+
+# T
+# U
+# V
+# W
+
+# X
+
+    'EXCHANGE A,':
+        'prefix': 'XCH'
+        'body': 'XCH A, ${1:srcbyte}\n$2'
+
+    'XRL':
+        'prefix': 'LXOR'
+        'body': 'XRL ${1:A}, ${2:srcbyte}\n$3'
+
+
+# Y
+# Z

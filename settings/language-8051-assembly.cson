@@ -1,0 +1,3 @@
+'.source.8051-assembly':
+    'editor':
+        'commentStart': '; '
