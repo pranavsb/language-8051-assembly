@@ -51,7 +51,7 @@
             },
 
             {
-                'match': '^[0-9a-zA-Z]+:'
+                'match': '^[0-9a-zA-Z_]+:'
                 'name': 'support.function.label.8051-assembly'
             }
 
