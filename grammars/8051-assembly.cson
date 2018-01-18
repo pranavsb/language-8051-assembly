@@ -36,7 +36,7 @@
             },
 
             {
-                'match': '\\b(ADD|ADDC|ANL|CJNE|CLR|CPL|DA|DEC|DIV|DJNZ|INC|JB|JNB|JBC|JC|JNC|JZ|JNZ|MOV|MOVC|MOVX|MUL|NOP|ORL|POP|PUSH|RL|RLC|RR|RRC|SUBB|SWAP|XCH|XRL)\\b'
+                'match': '\\b(ADD|ADDC|ANL|CJNE|CLR|CPL|DA|DEC|DIV|DJNZ|INC|JB|JNB|JBC|JC|JNC|JZ|JNZ|MOV|MOVC|MOVX|MUL|NOP|ORL|POP|PUSH|RL|RLC|RR|RRC|SETB|SUBB|SWAP|XCHD|XCH|XRL)\\b'
                 'name': 'keyword.instruction.8051-assembly'
             },
 
