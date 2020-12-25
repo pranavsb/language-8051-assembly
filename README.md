@@ -1,5 +1,8 @@
 # language-8051-assembly package
 
+### UPDATE: 1000+ downloads, I never imagined a random weekend project would end up being used so much. I <3 open source :)
+### https://atom.io/packages/language-8051-assembly
+
 Syntax highlighting and snippets for 8051 assembly.
 
 This is a package for GitHub's Atom editor.
